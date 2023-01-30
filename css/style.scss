@@ -8,6 +8,8 @@
   --color-light-grayish-blue: hsl(240, 5%, 91%);
 }
 
+$bp-1: 62.5em; // 1000px;
+
 *,
 *::after,
 *::before {
@@ -52,7 +54,6 @@ video {
   background-color: #fff;
   border-radius: 2rem;
   padding: 5rem 7rem;
-
   background-image: url(../images/bg-pattern-desktop.svg);
   background-position: -485% 65%;
   background-repeat: no-repeat;
@@ -63,6 +64,13 @@ video {
   align-items: center;
   column-gap: 5rem;
 
+  @media only screen and (max-width: $bp-1) {
+    margin: 25rem 0 10rem;
+    overflow: unset;
+
+    flex-direction: column;
+  }
+
   &::after {
     content: "";
     position: absolute;
@@ -72,31 +80,50 @@ video {
     width: 15rem;
     height: 15em;
     translate: -17rem 35%;
+
+    @media only screen and (max-width: $bp-1) {
+      translate: -16rem -53%;
+    }
   }
 
   &__left {
     width: 45%;
-    position: relative;
+    // position: absolute;
+
+    @media only screen and (max-width: $bp-1) {
+      width: 100%;
+      top: 3%;
+      // left: 50%;
+      margin: 0 auto;
+    }
   }
 
   &__illustration-woman {
     width: 45rem;
     // height: 45rem;
     translate: -15rem 0%;
+
+    @media only screen and (max-width: $bp-1) {
+      translate: unset;
+      margin: 0 auto;
+    }
   }
 
   &__illustration-woman-img {
     height: 100%;
   }
 
-  &__illustration-box {
-    width: 15rem;
-    height: 15rem;
-    z-index: 2;
-    position: absolute;
-    top: 52%;
-    left: -15rem;
-  }
+  // &__illustration-box {
+  //   width: 15rem;
+  //   height: 15rem;
+  //   z-index: 2;
+  //   position: absolute;
+  //   top: 52%;
+  //   left: -15rem;
+
+  //   @media only screen and (max-width: $bp-1) {
+  //   }
+  // }
 
   &__illustration-box-img {
     min-height: 100%;
@@ -136,20 +163,44 @@ video {
 
   &__arrow-box {
     width: 1.25rem;
+    transition: rotate 0.2s;
   }
 
   &__question {
     font-size: 1.5rem;
     color: var(--color-very-dark-grayish-blue);
+    transition: color 0.2s;
+  }
+
+  &__question-box:hover &__question {
+    color: var(--color-soft-red);
   }
 
   &__answer {
     font-size: 1.2rem;
-    color: var(--color-light-grayish-blue);
+    color: var(--color-very-dark-grayish-blue);
     display: none;
   }
 }
 
 .heading {
   font-size: 3rem;
+
+  @media only screen and (max-width: $bp-1) {
+    text-align: center;
+  }
+}
+
+// State styles
+
+.unhide {
+  display: block;
+}
+
+.rotate {
+  rotate: 180deg;
+}
+
+.bold {
+  font-weight: 700;
 }
