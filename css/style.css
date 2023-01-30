@@ -21,6 +21,11 @@ html {
   font-size: 62.5%;
   color-scheme: dark light;
 }
+@media only screen and (max-width: 43.75em) {
+  html {
+    font-size: 50%;
+  }
+}
 
 body {
   min-height: 100vh;
@@ -58,9 +63,20 @@ video {
 }
 @media only screen and (max-width: 62.5em) {
   .main {
-    margin: 25rem 0 10rem;
+    margin: 25rem 0 5rem;
     overflow: unset;
+    background-image: url(../images/bg-pattern-mobile.svg);
+    background-position: 50% 0%;
+    background-size: 45rem;
     flex-direction: column;
+  }
+}
+@media only screen and (max-width: 43.75em) {
+  .main {
+    margin: 15rem 0 5rem;
+    background-size: 30rem;
+    padding: 3.5rem;
+    background-position: 50% -5%;
   }
 }
 .main::after {
@@ -75,7 +91,7 @@ video {
 }
 @media only screen and (max-width: 62.5em) {
   .main::after {
-    translate: -16rem -53%;
+    display: none;
   }
 }
 .main__left {
@@ -83,9 +99,15 @@ video {
 }
 @media only screen and (max-width: 62.5em) {
   .main__left {
+    height: 20rem;
     width: 100%;
     top: 3%;
     margin: 0 auto;
+  }
+}
+@media only screen and (max-width: 43.75em) {
+  .main__left {
+    height: 10rem;
   }
 }
 .main__illustration-woman {
@@ -94,12 +116,15 @@ video {
 }
 @media only screen and (max-width: 62.5em) {
   .main__illustration-woman {
-    translate: unset;
+    translate: 0% -28rem;
     margin: 0 auto;
   }
 }
-.main__illustration-woman-img {
-  height: 100%;
+@media only screen and (max-width: 43.75em) {
+  .main__illustration-woman {
+    width: 30rem;
+    translate: 0% -21rem;
+  }
 }
 .main__illustration-box-img {
   min-height: 100%;
@@ -109,6 +134,16 @@ video {
   display: flex;
   flex-direction: column;
   row-gap: 3rem;
+}
+@media only screen and (max-width: 62.5em) {
+  .main__right {
+    width: 90%;
+  }
+}
+@media only screen and (max-width: 43.75em) {
+  .main__right {
+    width: 100%;
+  }
 }
 .main__dropdown-box {
   display: flex;

@@ -9,6 +9,7 @@
 }
 
 $bp-1: 62.5em; // 1000px;
+$bp-2: 43.75em; // 700px;
 
 *,
 *::after,
@@ -22,6 +23,10 @@ html {
   box-sizing: border-box;
   font-size: 62.5%;
   color-scheme: dark light;
+
+  @media only screen and (max-width: $bp-2) {
+    font-size: 50%;
+  }
 }
 
 body {
@@ -65,10 +70,20 @@ video {
   column-gap: 5rem;
 
   @media only screen and (max-width: $bp-1) {
-    margin: 25rem 0 10rem;
+    margin: 25rem 0 5rem;
     overflow: unset;
+    background-image: url(../images/bg-pattern-mobile.svg);
+    background-position: 50% 0%;
+    background-size: 45rem;
 
     flex-direction: column;
+  }
+
+  @media only screen and (max-width: $bp-2) {
+    margin: 15rem 0 5rem;
+    background-size: 30rem;
+    padding: 3.5rem;
+    background-position: 50% -5%;
   }
 
   &::after {
@@ -82,48 +97,40 @@ video {
     translate: -17rem 35%;
 
     @media only screen and (max-width: $bp-1) {
-      translate: -16rem -53%;
+      display: none;
     }
   }
 
   &__left {
     width: 45%;
-    // position: absolute;
 
     @media only screen and (max-width: $bp-1) {
+      // position: absolute;
+      height: 20rem;
       width: 100%;
       top: 3%;
-      // left: 50%;
       margin: 0 auto;
+    }
+
+    @media only screen and (max-width: $bp-2) {
+      height: 10rem;
     }
   }
 
   &__illustration-woman {
     width: 45rem;
-    // height: 45rem;
     translate: -15rem 0%;
 
     @media only screen and (max-width: $bp-1) {
-      translate: unset;
+      translate: 0% -28rem;
       margin: 0 auto;
     }
+
+    @media only screen and (max-width: $bp-2) {
+      width: 30rem;
+      translate: 0% -21rem;
+    }
   }
-
-  &__illustration-woman-img {
-    height: 100%;
-  }
-
-  // &__illustration-box {
-  //   width: 15rem;
-  //   height: 15rem;
-  //   z-index: 2;
-  //   position: absolute;
-  //   top: 52%;
-  //   left: -15rem;
-
-  //   @media only screen and (max-width: $bp-1) {
-  //   }
-  // }
 
   &__illustration-box-img {
     min-height: 100%;
@@ -135,6 +142,14 @@ video {
     display: flex;
     flex-direction: column;
     row-gap: 3rem;
+
+    @media only screen and (max-width: $bp-1) {
+      width: 90%;
+    }
+
+    @media only screen and (max-width: $bp-2) {
+      width: 100%;
+    }
   }
 
   &__dropdown-box {

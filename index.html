@@ -27,11 +27,16 @@
       <section class="main__left">
         &nbsp;
         <div class="main__illustration-woman">
-          <img
-            src="images/illustration-woman-online-desktop.svg"
-            alt="Woman online"
-            class="main__illustration-woman-img"
-          />
+          <picture class="main__illustration-woman-img">
+            <source
+              srcset="images/illustration-woman-online-mobile.svg"
+              media="(max-width: 1000px)"
+            />
+            <img
+              src="images/illustration-woman-online-desktop.svg"
+              alt="Woman online"
+            />
+          </picture>
         </div>
 
         <!-- <div class="main__illustration-box">
